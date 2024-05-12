@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="details">
+      <app-title title="Login"></app-title>
+  
+      <form [formGroup]="loginForm" (ngSubmit)="submit()">
+  
+        <!-- Email input -->
+        <text-input
+          [control]="fc['email']"
+          [showErrorsWhen]="isSubmitted"
+          type="email"
+          label="Email">
+        </text-input>
+  
+        <!-- Password input -->
+        <text-input
+          [control]="fc['password']"
+          [showErrorsWhen]="isSubmitted"
+          type="password"
+          label="Password">
+        </text-input>
+  
+        <!-- User type selection -->
+        <div class="form-group">
+          <label>User Type</label><br>
+          <input type="radio" formControlName="userType" value="buyer" checked> Buyer
+          <input type="radio" formControlName="userType" value="seller"> Seller
+        </div>
+  
+        <!-- Submit button -->
+        <default-button text="Login"></default-button>
+  
+        <!-- Registration link -->
+        <div class="register">
+          New user? &nbsp;
+          <a routerLink="/register" [queryParams]="{returnUrl:returnUrl}">
+            Register here
+          </a>
+        </div>
+  
+      </form>
+    </div>
+  </div>
+  

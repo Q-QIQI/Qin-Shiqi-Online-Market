@@ -1,0 +1,20 @@
+<ul>
+    <li *ngFor="let product of products">
+        <ng-container *ngIf="!product.sold">
+            <a routerLink="/product/{{product.id}}">
+                <img [src]="product.imageUrl" [alt]="product.name"/>
+                <div class="content">
+                    <div class="name">
+                        {{product.name}}
+                    </div>
+                    <div class="price">
+                        <span>{{product.price | currency}}</span>
+                    </div>
+                </div>
+            </a>
+        </ng-container>
+    </li>
+</ul>
+
+
+
